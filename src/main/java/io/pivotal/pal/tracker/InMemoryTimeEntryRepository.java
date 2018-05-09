@@ -6,7 +6,7 @@ import java.util.List;
 
 public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
-    private long generatedId = 0;
+    private Long generatedId = new Long(0);
 
     private HashMap timeEntries = new HashMap();
 
@@ -27,18 +27,18 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
         return new ArrayList(timeEntries.values());
     }
 
-    public TimeEntry update(long id, TimeEntry timeEntry) {
+    public TimeEntry update(Long id, TimeEntry timeEntry) {
 
         TimeEntry ent = new TimeEntry(id, timeEntry.getProjectId(), timeEntry.getUserId(), timeEntry.getDate(), timeEntry.getHours());
         timeEntries.put(id, ent);
         return ent;
     }
 
-    public TimeEntry find(long id) {
+    public TimeEntry find(Long id) {
         return (TimeEntry) timeEntries.get(id);
     }
 
-    public void delete(long id) {
+    public void delete(Long id) {
         timeEntries.remove(id);
     }
 }
