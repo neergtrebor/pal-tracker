@@ -5,7 +5,7 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 
 public class TimeEntryHealthIndicator implements HealthIndicator {
 
-    private static final int MAX_TIME_ENTRIES = 5;
+    private static final int MAX_TIME_ENTRIES = 0;
     private final TimeEntryRepository timeEntryRepo;
 
     public TimeEntryHealthIndicator(TimeEntryRepository timeEntryRepo) {
